@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../vendor/bootstrap/css/custom.css" rel="stylesheet">-->
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Stake Holders Panel</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                   <!-- <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>-->
+                 <!--   <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>-->
+<!--                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>-->
+                   <!-- </ul>-->
+                    <!-- /.dropdown-messages -->
+                <!--</li>-->
+                <!-- /.dropdown -->
+<!--                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>-->
+                    <!-- /.dropdown-tasks -->
+                <!--</li>-->
+                <!-- /.dropdown -->
+<!--                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>-->
+                    <!-- /.dropdown-alerts -->
+                <!--</li>-->
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+<!--                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>-->
+                        <!--<li class="divider"></li>-->
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    <!--</ul>-->
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-info -o fa-fw"></i>Basic Information</a>
+                           <!-- <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>-->
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>Residential Address </a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Office Address</a>
+                        </li>
+                                                <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>Social Media Handle</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Apply As Volunteer</a>
+                        </li>
+                                                <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>Role  </a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Membership Information</a>
+                        </li>
+                                                <li>
+                            <a href="tables.html"><i class="fa fa-table fa-fw"></i>Membership Terms and Condition</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Fee Structure</a>
+                        </li>
+                                                <li>
+                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i>Contact</a>
+                        </li>
+
+                       </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+      <!--  <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Basic Information</h1>
+                </div>
+      -->          <!-- /.col-lg-12 -->
+            <!--</div>-->
+            <!-- /.row -->
+            <!--<div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Line Chart Example
+                        </div>
+            -->            <!-- /.panel-heading -->
+                       <!-- <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart"></div>
+                            </div>
+                        </div>
+                       --> <!-- /.panel-body -->
+                   <!-- </div>-->
+                    <!-- /.panel -->
+             <!--   </div>-->
+                <!-- /.col-lg-12 -->
+                <!--<div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Pie Chart Example
+                        </div>
+                -->        <!-- /.panel-heading -->
+                       <!-- <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-pie-chart"></div>
+                            </div>
+                        </div>
+                       --> <!-- /.panel-body -->
+                    <!--</div>-->
+                    <!-- /.panel -->
+                <!--</div>-->
+                <!-- /.col-lg-6 -->
+<!--                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Multiple Axes Line Chart Example
+                        </div>-->
+                        <!-- /.panel-heading -->
+<!--                        <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-multi"></div>
+                            </div>
+                        </div>-->
+                        <!-- /.panel-body -->
+                   <!-- </div>-->
+                    <!-- /.panel -->
+              <!--  </div>-->
+                <!-- /.col-lg-6 -->
+               <!-- <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Moving Line Chart Example
+                        </div>
+               -->         <!-- /.panel-heading -->
+                       <!-- <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-line-chart-moving"></div>
+                            </div>
+                        </div>
+                       --> <!-- /.panel-body -->
+                   <!-- </div>-->
+                    <!-- /.panel -->
+               <!-- </div>-->
+                <!-- /.col-lg-6 -->
+ <!--               <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>-->
+                        <!-- /.panel-heading -->
+                     <!--   <div class="panel-body">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-bar-chart"></div>
+                            </div>
+                        </div>-->
+                        <!-- /.panel-body -->
+                    <!--</div>-->
+                    <!-- /.panel -->
+                <!--</div>-->
+                <!-- /.col-lg-6 -->
+<!--                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Flot Charts Usage
+                        </div>-->
+                        <!-- /.panel-heading -->
+                       <!-- <div class="panel-body">
+                            <p>Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks, and interactive features. In SB Admin, we are using the most recent version of Flot along with a few plugins to enhance the user experience. The Flot plugins being used are the tooltip plugin for hoverable tooltips, and the resize plugin for fully responsive charts. The documentation for Flot Charts is available on their website, <a target="_blank" href="http://www.flotcharts.org/">http://www.flotcharts.org/</a>.</p>
+                            <a target="_blank" class="btn btn-default btn-lg btn-block" href="http://www.flotcharts.org/">View Flot Charts Documentation</a>
+                        </div>
+                       --> <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<!--
+ <form>
+ <fieldset>
+  <legend>Personalia:</legend>
+  <div class="col-sm-12 controls">
+      <center><div class="col-xs-2" style="padding-right:5px;"></center>
+  <div class="form-group">
+<center> Title: <input id="login-password" style="margin-auto:25px" type="text" class="control" name="password" placeholder="password"><a id="btn-login" style="margin-left: 25px" href="index.html" class="btn-sm btn-success">Edit</a><br></center>   
+  </div>
+  </div>
+  <center><div class="col-xs-2" style="padding-right:5px;"></center>
+ <div class="form-group">
+<center>FirstName: <input id="login-password" style="margin-auto:25px" type="text" class="control" name="password" placeholder="password"><a id="btn-login" style="margin-left: 25px" href="index.html" class="btn-sm btn-success">Edit</a><br><center>
+  </div>
+  </div>
+  <center><div class="col-xs-2" style="padding-right:5px;"></center>
+  <div class="form-group">
+ <center>MiddleName: <input id="login-password"  style="margin-auto:25px" type="password" class="group" name="password" placeholder="password"><a id="btn-login" style="margin-left: 25px" href="index.html" class="btn-sm btn-success">Edit</a><br></center>
+  </div>
+  </div>
+  <center><div class="col-xs-2" style="padding-right:5px;"></center>
+  <div class="form-group">
+  <center><span>Name:</span> <input id="login-password"  style="auto:25px" type="password" class="form-group" name="password" placeholder="password"><a id="btn-login" style="margin-left: 25px" href="index.html" class="btn-sm btn-success">Edit</a><br></center>
+  </div>
+  </div>
+  </div>
+  
+ </fieldset>
+</form>
+--><!--  Start  !-->
+
+<!--End !-->
+<!--<form class="form-inline" style="margin-left:25px">
+  <div class="form-group" style="margin-bottom:25px">
+--><!--    <label class="sr-only">Email</label>
+    <p class="form-control">email@example.com</p>-->
+ <!-- 
+  <div class="form-inline mx-sm-3" style="margin-top:25px">
+      <div style="col-2">
+    <label class="form-group">Shan</label>
+    <input type="password"class="form-control"  id="inputPassword2" placeholder="Password">
+  
+  <a type="submit" href="info.html" class="btn btn-primary">Edit</a>
+  </div>
+  </div>-->
+<!--    <label class="sr-only">Email</label>
+    <p class="form-control">email@example.com</p>-->
+  
+ <!-- <div class="form-inline mx-sm-3" style="margin-top:25px">
+      <div class="col-2">
+    <label class="form-group">FirstName</label>
+    <input type="password"class="form-control"  id="inputPassword2" placeholder="Password">
+  
+  <button type="submit" class="btn-smt btn btn-primary">Edit</button>
+  </div>
+  </div>-->
+<!--    <label class="sr-only">Email</label>
+    <p class="form-control">email@example.com</p>-->
+  
+ <!--<div class="form-inline mx-sm-3" style="margin-top:25px">
+      <div style="col-2">
+ <label class="form-group">MiddleName</label>
+    <input type="password"class="form-control"  id="inputPassword2" placeholder="Password">
+  
+  <button type="submit" class="btn btn-primary">Edit</button>
+  </div>
+  </div>
+  </div>
+ --> 
+<!--</form>-->
+
+<div class="container">
+<div id="loginbox" style="margin-top:10px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8  col-sm-offset-2">                    
+        <div class="login-panel panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title">Basic Information</div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px ;margin-bottom:25px"></div>
+            </div>   
+ <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date" style="margin-bottom:5px" class="form-control">Title</label>
+                            <input type="#" style="margin-bottom:5px"  class="form-control" id="date" name="date">
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date" class="form-control" style="margin-bottom:5px" >FirstName</label>
+                            <input type="#" class="form-control"  style="margin-bottom:5px" id="date" name="date">
+                            <button type="button" style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                                
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date"style="margin-bottom:5px" class="form-control">MiddleName</label>
+                            <input type="#" style="margin-bottom:5px" class="form-control" id="date" name="date">
+                            <button type="button" style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                     <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date"style="margin-bottom:5px" class="form-control">LastName</label>
+                            <input type="#" style="margin-bottom:5px" class="form-control" id="date" name="date">
+                            <button type="button" style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                     <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date"style="margin-bottom:5px" class="form-control">Sex</label>
+                             <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                               <span class="caret"></span></button>
+                                     <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                      <li role="presentation"><a role="menuitem" href="#">Male</a></li>
+                                      <li role="presentation"><a role="menuitem" href="#">Female</a></li>
+                                      <li role="presentation"><a role="menuitem" href="#">Others</a></li>
+                                    </ul>
+                            <button type="button" style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                   
+                    <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date"style="margin-bottom:5px" class="form-control">Date of Birth</label>
+                           <input type="date" style="margin-bottom:5px" class="form-control" id="date" name="date">
+                            <button type="button" style="margin-bottom:5px " class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date"style="margin-bottom:5px" class="form-control">Email-id</label>
+                            <input type="#" style="margin-bottom:5px" class="form-control" id="date" name="date">
+                            <button type="button" style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-inline">
+                        <div class="col-sm-12 text-right">
+                            <label for="date"style="margin-bottom:5px" class="form-control">Mobile No</label>
+                            <input type="#" style="margin-bottom:5px" class="form-control" id="date" name="date">
+                            <button type="button" style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-edit"></span> Update
+                            </button>
+                            <button type="button"  style="margin-bottom:5px" class="btn btn-default preview-add-button">
+                                <span class="glyphicon glyphicon-remove"></span> Cancel
+                            </button>
+                        </div>
+                    </div>
+                   
+        </div>
+    </div>
+</div>
+
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <script src="../vendor/flot/excanvas.min.js"></script>
+    <script src="../vendor/flot/jquery.flot.js"></script>
+    <script src="../vendor/flot/jquery.flot.pie.js"></script>
+    <script src="../vendor/flot/jquery.flot.resize.js"></script>
+    <script src="../vendor/flot/jquery.flot.time.js"></script>
+    <script src="../vendor/flot-tooltip/jquery.flot.tooltip.min.js"></script>
+    <script src="../data/flot-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
