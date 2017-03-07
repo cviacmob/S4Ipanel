@@ -8,11 +8,11 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 {
     $db=connect_db();
     $uemail = $_POST["email"];
-    $upwd = $_POST['password'];
+    $upwd = $_POST["password"];
     $pwd=md5($upwd);
     
     $sql = "SELECT * FROM user_login WHERE email = '$uemail' and password = '$pwd'";
-    echo '$pwd';
+    //echo '$pwd';
     $exe = $db->query($sql);
 /*    $data         = $exe->fetch_all(MYSQLI_ASSOC);
     $id= array_column($data,'Title');*/
@@ -34,10 +34,12 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
         session_start();
         $id= array_column($data,'id');
         $ID             = array_shift($id);
+        $email= array_column($data,'email');
+        $Email            = array_shift($email);
         $_SESSION['ID']=$ID;
-        /*$_SESSION['email'] = $data['email'];*/
+        $_SESSION['email'] = $Email;
         
-        header("Location: index.html"); //change this
+        header("Location: basicinfo.php"); //change this
     }
     else
     {

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="/pages/js/Validation.js"></script>
+
+</head>
+<div class="login-panel panel panel-default">
+<div class="panel-heading">
+<center>
+<h1 class="page-header"> Welcome to StakeHolders Management Panel</h1>
+</center>
+</div>
+</div>
+<body>
+<div class="container">
+
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div class="login-panel panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title">Sign In</div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"></div>
+            </div>     
+            <div style="padding-top:30px" class="panel-body" >
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                <!-- <input type="email" class="form-control" id="inputEmail" placeholder="Email"  method="post"   >-->
+                <form id="loginform" class="form-horizontal" role="form" action="/Login.php" name="valid" method="post" onsubmit="return Validation()">    
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="login-username" type="email" class="form-control" name="username" value="" placeholder="username or email" data-error="Bruh, that email address is invalid" required>                                        
+                    </div>
+                            
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                       <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                    </div>
+                                
+                    <div class="input-group">
+                       
+                    <br>
+                    <div style="margin-top:10px" class="form-group">
+                        <div class="col-sm-12 controls">
+                            <a id="btn-login"  class="btn btn-success">Submit</a>
+                            <a id="btn-fblogin" href="#" class="btn btn-success">Cancel</a>
+                            <a href="#" class="btn btn-link">Forgot password</a>
+                            <a href="#" class="btn btn-link">New User</a>
+
+                        </div>
+                    </div> 
+                    
+                    <!-- <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                Don't have an account! 
+                                <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                    Sign Up Here
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>   --> 
+                </form>     
+            </div>                     
+        </div>  
+    </div>
+</div>
+</body>
+</html>

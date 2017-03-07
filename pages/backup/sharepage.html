@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <link rel="stylesheet" type="text/css" href="../dist/css/jquery.sharepage.css">
+  <style type="text/css">
+    .share-page {
+      width: 200px;
+      margin: 100px auto 0;
+    }
+  </style>
+  <script src="js/jquery.min.js"></script>
+  <script src="../dist/js/jquery.sharepage.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#share-buttons").sharepage({
+        networks: ["linkedin", "facebook", "twitter", "googleplus", "vk", "unknown"],
+        url: "http://google.com",
+        title: "SharePage example title",
+        source: "SharePage example page",
+        width: 650,
+        height: 600,
+        design: "buttons"
+      });
+      $("#destroy").click(function(){
+        $("#share-buttons").sharepage("destroy");
+      });
+    });
+  </script>
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+ <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <!--<div class="navbar-header">-->
+<center><h2 class="page">Schools For India StakeHolders Panel</h2></center>
+            </div>
+            <!-- /.navbar-header -->
+
+    <ul class="nav navbar-top-links navbar-right">
+ 
+                </li>
+            </ul>
+ <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--<h1 class="page-header">Forms</h1>-->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default" style="margin-top:5px" >
+                        <div class="panel-heading">
+                           <h1 class="page">User Registration</h1>
+                        </div>
+    
+  <div id="share-buttons"></div>
+  <button id="destroy">Destroy</button>
+</body>
+</html>

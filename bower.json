@@ -18,7 +18,7 @@
     "test",
     "tests",
     "pages",
-    "index.html",
+    "admin.html",
     "/js"
   ],
   "main": [

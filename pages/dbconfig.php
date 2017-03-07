@@ -1,8 +1,14 @@
 <?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$datbase = "schools4db";
-mysqli_connect($host,$user,$password);
-mysqli_select_db($datbase);
+//db details
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'schools4db';
+
+//Connect and select the database
+$db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+}
 ?>

@@ -65,45 +65,37 @@
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                 <!-- <input type="email" class="form-control" id="inputEmail" placeholder="Email"  method="post"   >-->
                 <form id="loginform" class="form-horizontal" role="form" action="login.php" method="post">    
-                    <div style="margin-bottom: 25px" class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input  type="email" class="form-control" name="email" value="" placeholder="username or email" data-error="Bruh, that email address is invalid" required>                                        
-                    </div>
-                            
-                    <div style="margin-bottom: 25px" class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                       <input  type="password" class="form-control" name="password" placeholder="password" required>
-                    </div>
-                                
-                    <div class="input-group">
-                       
-                    <br>
-                    <div style="margin-top:10px" class="form-group">
-                        <div class="col-sm-12 controls">
-                            <!--<a id="btn-login" type="submit" name="submit" class="btn btn-success">Submit</a>-->
-                            <button type="submit" class="btn btn-success">Submit </button>
-                            <a id="btn-fblogin" href="#" class="btn btn-success">Cancel</a>
-                            <a href="#" class="btn btn-link">Forgot password</a>
-                            <a href="registration.html" class="btn btn-link">New User</a>
+                    <div style="margin-bottom: 25px" class="input-group"><hr>
 
-                        </div>
-                    </div> 
-                    
-                    <!-- <div class="form-group">
-                        <div class="col-md-12 control">
-                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                Don't have an account! 
-                                <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                    Sign Up Here
-                                </a>
-                                
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                          <h3><i class="fa fa-lock fa-4x"></i></h3>
+                          <h2 class="text-center">Forgot Password?</h2>
+                          <p>You can reset your password here.</p>
+                            <div class="panel-body">
+                              
+                              <form class="form">
+                                <fieldset>
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                      
+                                      <input id="emailInput" placeholder="email address" class="form-control" type="email" oninvalid="setCustomValidity('Please enter a valid email address!')" onchange="try{setCustomValidity('')}catch(e){}" required="">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                  </div>
+                                </fieldset>
+                              </form>
+                              
                             </div>
                         </div>
-                    </div>   --> 
-                </form>     
-            </div>                     
-        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-</body>
-</html>
