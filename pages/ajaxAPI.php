@@ -8,6 +8,7 @@ include('residentupdate.php');
 include('officeupdate.php');
 include('updatesocial.php');
 include('checkbox.php');
+include('register.php');
 if (isset($_POST["action"])) {
 				//G	et all state data
 				$action = $_POST["action"];
@@ -108,6 +109,15 @@ elseif (isset($_POST["terms"])) {
 								header('Content-Type: application/json');
 								$db = connect_db();
 								membership();
+				}
+}
+elseif (isset($_POST["register"])) {
+				//Get all state data
+				$action = $_POST["register"];
+				if ($action == "Register") {
+								header('Content-Type: application/json');
+								$db = connect_db();
+								register();
 				}
 }
 ?>

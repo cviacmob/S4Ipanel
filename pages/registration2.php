@@ -97,7 +97,7 @@
     }
         
 	var pwd  = document.getElementById("password1").value;
-	var conpwd = document.getElementById("confirmpassword").value;
+	var conpwd = document.getElementById("password_confirmation").value;
    if(pwd != "" && conpwd!="")
 	{
         if(pwd.length<8){
@@ -162,10 +162,11 @@ include './header.php';
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-8">
-                                    <form data-toggle="validator" id="password" action="register.php" method="post" role="form" onsubmit="return Validation()">
+                                    <form data-toggle="validator" id="registerForm2" action="ajaxAPI.php" method="post" role="form" onsubmit="return Validation()">
 									                    <?php if (isset($_GET['err'])) { ?>
                     <div class="alert alert-danger text-center"><?php echo "Registration failed!"; ?></div>
                     <?php } ?>
+                    <input type="hidden" id="register" name="register" value="Register"/>
 					
                                          <div class="form-group">
                                             <label>Title</label>
@@ -178,11 +179,6 @@ include './header.php';
                                         <div class="form-group">
                                             <label>First Name</label>
                                          <input type="text" class="form-control" id="Fname"   name="fname" placeholder="First Name" required>
-                                            <!--<p class="help-block">Example block-level help text here.</p>-->
-                                        </div>
-                                             <div class="form-group">
-                                            <label>Middle Name</label>
-                                            <input type="text" class="form-control" id="Mname"  name="mname" placeholder="Middle Name" required>
                                             <!--<p class="help-block">Example block-level help text here.</p>-->
                                         </div>
                                              <div class="form-group">
@@ -231,7 +227,7 @@ include './header.php';
                                         </div>
                                          <div class="form-group">
                                             <label>Confirm Password</label>
-                                            <input type="password" class="form-control" name="password2" id="confirmpassword" placeholder="Confirm Password" data-bv-excluded="true" data-title="Confirmation password required" data-match="password" data-match-title="Your password and confirmation password do not match">
+                                            <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password" data-bv-excluded="true" data-title="Confirmation password required" data-match="password" data-match-title="Your password and confirmation password do not match">
                                         </div>
                                      
                                    <button type="submit" value="submit" class="btn btn-default" onclick="return vallidateFun();">Submit </button>
@@ -255,6 +251,57 @@ include './header.php';
 
     </div>
     <!-- /#wrapper -->
+    <script type='text/javascript'>
+  /* attach a submit handler to the form */
+    $("#registerForm2").submit(function(event) {
+   
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get the action attribute from the <form action=""> element */
+      var $form = $( this ),
+         url = $form.attr( 'action' );
+    var formdata=$form.serializeArray();
+    var posting = $.post( url, formdata);
+    
+         // url = "test.php";
+
+      /* Send the data using post with element id name and name2*/
+    //  var posting = $.post( url, { email: $('#email').val(), password: $('#password').val(),action:$('#action').val()} );
+//alert('ready');
+      /* Alerts the results */
+      posting.done(function( data ) {
+  //        alert('fail');
+        if(data["code"]==0){
+            
+       window.location = "index1.php?err=false";
+           /*  var delay = $(this).attr('data-delay');
+                    if (delay != undefined) {
+                        delay = parseInt(delay);
+                        clearTimeout(timeOut);
+                        timeOut = window.setTimeout(function () {
+                            alert.slideUp();
+                        }, delay);
+                    }
+*/
+          }
+          else{
+            //  myFunction();
+        
+							window.location = "registration2.php?err=true";
+							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">LoginFailed</div>');
+								$("#memberForm").trigger('reset');
+								$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
+								$('#loginsubmit').html('&nbsp;Submit').prop('disabled', false);
+							}).delay(3000).slideUp('fast');
+          }
+      });
+
+
+
+    });
+</script>
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>

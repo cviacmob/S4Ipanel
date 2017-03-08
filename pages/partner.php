@@ -331,15 +331,7 @@ registration formalities, please contact <b>director_partner@schoolsforindia.org
   //        alert('fail');
         if(data["code"]==0){
             alert('sucess');
-           /*  var delay = $(this).attr('data-delay');
-                    if (delay != undefined) {
-                        delay = parseInt(delay);
-                        clearTimeout(timeOut);
-                        timeOut = window.setTimeout(function () {
-                            alert.slideUp();
-                        }, delay);
-                    }
-*/
+
           }
           else{
             //  myFunction();

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+?>
  
 <head>
 
@@ -222,12 +222,7 @@ if($_SERVER['REQUEST_METHOD']=='GET')
                             <div class="row">
                                 <div class="col-lg-8">
                                     <form data-toggle="validator" id="myForm" name="myForm" action="ajaxAPI.php" role="form" method="post">
-                                    <!--<div id="success"></div>-->
-                      
-  <!-- <div class="alert alert-success page-alert" id="alert-5">
-                    <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                    <strong>Cool!</strong> This alert will close in 3 seconds. The data-delay attribute is in milliseconds.
-                </div>-->
+                         <div id="errorDiv"></div>
                 <div id="myDiv">
                     </div>
 
@@ -338,15 +333,12 @@ if($_SERVER['REQUEST_METHOD']=='GET')
       posting.done(function( data ) {
   
         if(data["code"]==0){
-            //$('#success').slideUp();
-       $('#myDiv').slideUp(5000);
-         
-/*
-        					$('#myAlert').slideDown('fast', function(){
-								$('#myAlert').html('<div class="alert alert-info">LoginFailed</div>');
-								$("#myForm").trigger('reset');
+
+
+    							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">success</div>');
+
 							}).delay(3000).slideUp('fast');
-*/         window.location = "basicinfo.php";
         }
           
           else{
@@ -355,7 +347,6 @@ if($_SERVER['REQUEST_METHOD']=='GET')
 							
 							$('#errorDiv').slideDown('fast', function(){
 								$('#errorDiv').html('<div class="alert alert-info">LoginFailed</div>');
-								$("#loginform").trigger('reset');
 							}).delay(3000).slideUp('fast');
 							
 									   

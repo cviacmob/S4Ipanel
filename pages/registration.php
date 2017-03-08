@@ -1,17 +1,4 @@
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-<script
-  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="/pages/js/Validation.js"></script>
 
-</head>-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,6 +23,7 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -123,13 +111,14 @@
     <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 " style="top:-20px;">                    
         <div class="login-panel panel panel-default" >
             <div class="panel-heading">
-                <div class="panel-title">Sign In</div>
+                <div class="panel-title">User Registration</div>
                 <div style="float:right; font-size: 80%; position: relative; top:-10px"></div>
             </div>     
             <div  class="panel-body" >
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                 <!-- <input type="email" class="form-control" id="inputEmail" placeholder="Email"  method="post"   >-->
-                                           <form data-toggle="validator" id="password" action="register.php" method="post" role="form" onsubmit="return Validation()">
+                                           <form data-toggle="validator" id="registerForm" action="ajaxAPI.php" method="post" role="form" onsubmit="return Validation()">
+                                        <input type="hidden" id="register" name="register" value="Register"/>
                                          <div class="form-group">
                                             <label>Title</label>
                                             <select class="form-control" id="title1" name="title">
@@ -207,6 +196,57 @@
     </div>
 </div>
 </div>
+<script type='text/javascript'>
+  /* attach a submit handler to the form */
+    $("#registerForm").submit(function(event) {
+   
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get the action attribute from the <form action=""> element */
+      var $form = $( this ),
+         url = $form.attr( 'action' );
+    var formdata=$form.serializeArray();
+    var posting = $.post( url, formdata);
+    
+         // url = "test.php";
+
+      /* Send the data using post with element id name and name2*/
+    //  var posting = $.post( url, { email: $('#email').val(), password: $('#password').val(),action:$('#action').val()} );
+//alert('ready');
+      /* Alerts the results */
+      posting.done(function( data ) {
+  //        alert('fail');
+        if(data["code"]==0){
+            
+       window.location = "index1.php?err=false";
+           /*  var delay = $(this).attr('data-delay');
+                    if (delay != undefined) {
+                        delay = parseInt(delay);
+                        clearTimeout(timeOut);
+                        timeOut = window.setTimeout(function () {
+                            alert.slideUp();
+                        }, delay);
+                    }
+*/
+          }
+          else{
+            //  myFunction();
+        
+							window.location = "registration2.php?err=true";
+							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">LoginFailed</div>');
+								$("#memberForm").trigger('reset');
+								$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
+								$('#loginsubmit').html('&nbsp;Submit').prop('disabled', false);
+							}).delay(3000).slideUp('fast');
+          }
+      });
+
+
+
+    });
+</script>
 </body>
 </html>
 <?php

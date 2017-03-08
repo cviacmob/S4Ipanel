@@ -180,18 +180,6 @@ if(empty($ID)){
             
             <div class="row">
                 <div class="col-lg-12">
-                    <!--<div class="panel panel-default" style="margin-top:5px" >-->
- <!--                      
-                        <div class="panel panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">-->
-							<!--<form>-->
-							
-						
-<!--<form action="applyupdate.php" onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
-<div class="form-inline">                                
-<label><input type="checkbox" name="checkbox" value="check" id="agree" />
- I have read and agree to the Terms and Conditions and Privacy Policy</label>-->
 
     <form id="form1" runat="server" action="ajaxAPI.php" method="post" >
     <div class="form-inline">   
@@ -265,8 +253,7 @@ Tags: Volunteers
                 </ul>
     <div style="margin-top:20px" class="input-group">
             <div class="form-group">
-<!--              <div class="col-xs-6 col-xs-offset-3">
--->                <div class="form-inline">
+              <div class="form-inline">
                     <label class="form wrap-content">
                     <input type="checkbox" name="volunteer" class="form-inline"  value="Volunteer" id="agree" > 
                     I have read and agree to the Terms and Conditions   </label>
@@ -292,13 +279,6 @@ Tags: Volunteers
             
             <!--</div>-->
         </div>
-    
-    
-   <!--  <div class="form-group">
-                <div style="margin-top:20px" class="input-group">
-                  <button  type="submit"  style="margin-right:120px" value="submit"  name ="submit" class="btn btn-success">Agree </button>
-                    </div>
-                    </div>-->
 							</form>
                             
                             </div>
@@ -335,8 +315,8 @@ Tags: Volunteers
       event.preventDefault();
 
       /* get the action attribute from the <form action=""> element */
-      var $form = $( this ),
-         url = $form.attr( 'action' );
+    var $form = $( this ),
+    url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
     
@@ -344,21 +324,10 @@ Tags: Volunteers
 
       /* Send the data using post with element id name and name2*/
     //  var posting = $.post( url, { email: $('#email').val(), password: $('#password').val(),action:$('#action').val()} );
-alert('ready');
       /* Alerts the results */
       posting.done(function( data ) {
-          alert('fail');
         if(data["code"]==0){
-            alert('sucess');
-           /*  var delay = $(this).attr('data-delay');
-                    if (delay != undefined) {
-                        delay = parseInt(delay);
-                        clearTimeout(timeOut);
-                        timeOut = window.setTimeout(function () {
-                            alert.slideUp();
-                        }, delay);
-                    }
-*/
+  
           }
           else{
             //  myFunction();

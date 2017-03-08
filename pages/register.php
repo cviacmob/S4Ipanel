@@ -1,17 +1,14 @@
 <?php
 include ('id.php');
-require 'mysql.php';
 $msg = '';
-//echo 'shan';
-/*if (isset($_POST['save']))*/
-if($_SERVER['REQUEST_METHOD']=='POST')
+function register()
 {
-
-   // echo 'shaaa';
     $db = connect_db();
+    $sql="select email from user_login where email='$_POST[email]'";
+    $exec=$db->query($sql);
+    $data=$exec->fetch_all(MYSQLI_ASSOC);
     $ID = id_generate();
     $MemID= $ID.time();
-   // echo $_POST["title"];
     $Title=$_POST["title"];
     $FirstName=$_POST["fname"];
     $MiddleName="";
@@ -32,9 +29,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     if (!preg_match("/^[a-zA-Z ]+$/",$FirstName)) {
         header("Location:index.html");
 	}
-     if (!preg_match("/^[a-zA-Z ]+$/",$MiddleName)) {
-        header("Location:index.html");
-	}
+     
      if (!preg_match("/^[a-zA-Z ]+$/",$LastName)) {
         header("Location:index.html");
 	}
@@ -64,17 +59,20 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
     
 
-    /*$img = file_get_contents($image);*/
-    /*$con = mysqli_connect('localhost','root','','schools4db') or die('Unable To connect');*/
+
     $sql = "insert into membership (ID,MemID,Title,FirstName,MiddleName,LastName,Gender,DOB,EmailID1,Mobile1,StartDate,Country) values('$ID','$MemID','$Title','$FirstName','$MiddleName','$LastName','$Gender','$DOB','$EmailID','$Mobile','$today','$Country')";
     $exe = $db->query($sql);
     $sql="insert into user_login(id,email,password) values('$ID','$EmailID','$Pwd')";
     $exec = $db->query($sql);
-    /*$last_id = $exe->mysql_insert_id();*/
+    $result=array();
     if($exec==true){ 
+     $result['code']=0;
+     $result['desc']="success";
     header("Location:index1.php?err=false");
     }
     else{
+     $result['code']=1012;
+     $result['desc']="failed";
       header("Location:registration2.php?err=true");
     }
 
