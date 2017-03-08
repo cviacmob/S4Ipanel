@@ -31,9 +31,7 @@
             $landmark=array_column($row,'Landmark');
             $Landmark            = array_shift($landmark);
            ?>
-</html>
-<!DOCTYPE html>
-<html lang="en">
+
 
 <head>
 
@@ -388,7 +386,6 @@ $(document).ready(function(){
     <script src="../dist/js/sb-admin-2.js"></script>
 </body>
 
-</html>
 <?php
       include './footer.php';
       ?>

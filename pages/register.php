@@ -7,7 +7,9 @@ function register()
     $sql="select email from user_login where email='$_POST[email]'";
     $exec=$db->query($sql);
     $data=$exec->fetch_all(MYSQLI_ASSOC);
-    
+     $Email= array_column($data,'email');
+     $email             = array_shift($Email);
+     if(empty($email)){
     $ID = id_generate();
     $MemID= $ID.time();
     $Title=$_POST["title"];
@@ -69,14 +71,20 @@ function register()
     if($exec==true){ 
      $result['code']=0;
      $result['desc']="success";
-    header("Location:index1.php?err=false");
+    echo json_encode($result);
     }
     else{
      $result['code']=1012;
      $result['desc']="failed";
-      header("Location:registration2.php?err=true");
+     echo json_encode($result);
+      
     }
-
+     }
+     else{
+     $result['code']=1012;
+     $result['desc']="failed";
+     echo json_encode($result);
+     }
     $db = null;
 }
 ?>

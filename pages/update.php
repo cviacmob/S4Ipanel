@@ -14,7 +14,7 @@ function basic()
     $Mobile=$_POST["Mobile"];
     $timezone= +5.50; 
     $today   = date("Y-m-d H:i:s",time() + 3600*($timezone+date("I")));
-    $Country=$_POST["Country"];
+    $Country=$_POST["country"];
     $sql = "update  membership set Title='$Title',FirstName='$FirstName',LastName='$LastName',Gender='$Gender',DOB='$DOB',EmailID1='$EmailID',Mobile1='$Mobile',StartDate='$today',Country='$Country' where ID='$ID'";
     $exe = $db->query($sql);
     $db = null;

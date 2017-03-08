@@ -273,10 +273,31 @@ if($_SERVER['REQUEST_METHOD']=='GET')
 ?>" class="form-control" required>
 
                                         </div>
-                                     <div class="form-group">
+
+                                           <div class="form-group">
+                                                 <?php
+                          //Include database configuration file
+                           include('dbConfig.php');
+    
+                                 //Get all country data
+                               $query = $db->query("SELECT * FROM countrylist ORDER BY CountryName ASC");
+    
+                               //Count total number of rows
+                           $rowCount = $query->num_rows;
+                                      ?>
                                             <label>Country</label>
-                                            <input type="text" class="form-control" name="Country" value="<?php echo $country;
-?>" placeholder="Enter text">
+                                            <select class="form-control" name="country" id="country">
+                                                <option value="">Select Country</option>
+                                                <?php
+        if($rowCount > 0){
+            while($row = $query->fetch_assoc()){ 
+                echo '<option value="'.$row['CountryID'].'">'.$row['CountryName'].'</option>';
+            }
+        }else{
+            echo '<option value="">Country not available</option>';
+        }
+        ?>
+                                        </select>
                                         </div>
                                     
                                    <button type="submit" class="btn btn-default" name="submit" id="submit">Submit </button>

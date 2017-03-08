@@ -107,7 +107,7 @@
             </div>
 			</nav>
 <div class="container">
-
+<div id="errorDiv"></div>
     <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-8 " style="top:-20px;">                    
         <div class="login-panel panel panel-default" >
             <div class="panel-heading">
@@ -118,6 +118,7 @@
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                 <!-- <input type="email" class="form-control" id="inputEmail" placeholder="Email"  method="post"   >-->
                                            <form data-toggle="validator" id="registerForm" action="ajaxAPI.php" method="post" role="form" onsubmit="return Validation()">
+                                       
                                         <input type="hidden" id="register" name="register" value="Register"/>
                                          <div class="form-group">
                                             <label>Title</label>
@@ -202,13 +203,13 @@
    
       /* stop form from submitting normally */
       event.preventDefault();
-
+alert('suu');
       /* get the action attribute from the <form action=""> element */
       var $form = $( this ),
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -228,12 +229,9 @@
           else{
             //  myFunction();
         
-							window.location = "registration2.php?err=true";
+							
 							$('#errorDiv').slideDown('fast', function(){
-								$('#errorDiv').html('<div class="alert alert-info">LoginFailed</div>');
-								$("#memberForm").trigger('reset');
-								$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
-								$('#loginsubmit').html('&nbsp;Submit').prop('disabled', false);
+								$('#errorDiv').html('<div class="alert alert-info">User is Already Existed</div>');
 							}).delay(3000).slideUp('fast');
           }
       });
