@@ -190,7 +190,8 @@ if(empty($ID)){
 
 
                                     <form id="form2" runat="server" action="ajaxAPI.php">
-                                        <div<div class="form-inline">
+                                        <div id="errorDiv"></div>
+                                        <div class="form-inline">
                                             <ul>
                                                 <b> <li>Corporate Sponsor</li></b>
 
@@ -308,7 +309,7 @@ if(empty($ID)){
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -316,18 +317,12 @@ if(empty($ID)){
 //alert('ready');
       /* Alerts the results */
       posting.done(function( data ) {
-  //        alert('fail');
+  
         if(data["code"]==0){
-            alert('sucess');
-           /*  var delay = $(this).attr('data-delay');
-                    if (delay != undefined) {
-                        delay = parseInt(delay);
-                        clearTimeout(timeOut);
-                        timeOut = window.setTimeout(function () {
-                            alert.slideUp();
-                        }, delay);
-                    }
-*/
+                  				$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">success</div>');
+                               }).delay(3000).slideUp('fast');
+  
           }
           else{
             //  myFunction();

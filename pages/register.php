@@ -7,6 +7,7 @@ function register()
     $sql="select email from user_login where email='$_POST[email]'";
     $exec=$db->query($sql);
     $data=$exec->fetch_all(MYSQLI_ASSOC);
+    
     $ID = id_generate();
     $MemID= $ID.time();
     $Title=$_POST["title"];

@@ -224,6 +224,7 @@ $(document).ready(function(){
                             <div class="row">
                                 <div class="col-lg-8">
                                     <form role="form" method="POST" id="residentForm" action="ajaxAPI.php">
+                                        <div id="errorDiv"></div>
                                         <input type="hidden" id="rdent" value="resident" name="rdent"/>
                                         <div class="form-group">
                                             <label>House Number</label>
@@ -339,7 +340,7 @@ $(document).ready(function(){
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+        $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -350,7 +351,9 @@ $(document).ready(function(){
       posting.done(function( data ) {
   
         if(data["code"]==0){
-            alert('sucess');
+                            	$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">success</div>');
+                                }).delay(3000).slideUp('fast');
 
           }
           else{

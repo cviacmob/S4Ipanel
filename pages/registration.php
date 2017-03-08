@@ -219,16 +219,11 @@
   //        alert('fail');
         if(data["code"]==0){
             
-       window.location = "index1.php?err=false";
-           /*  var delay = $(this).attr('data-delay');
-                    if (delay != undefined) {
-                        delay = parseInt(delay);
-                        clearTimeout(timeOut);
-                        timeOut = window.setTimeout(function () {
-                            alert.slideUp();
-                        }, delay);
-                    }
-*/
+       window.location = "index.html";
+    	$('#errorDiv').slideDown('fast', function(){
+		$('#errorDiv').html('<div class="alert alert-info">success</div>');
+       }).delay(3000).slideUp('fast');
+  
           }
           else{
             //  myFunction();

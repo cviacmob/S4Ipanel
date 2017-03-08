@@ -182,6 +182,7 @@ if(empty($ID)){
                 <div class="col-lg-12">
 
     <form id="form1" runat="server" action="ajaxAPI.php" method="post" >
+        <div id="errorDiv"></div>
     <div class="form-inline">   
               <div style="border: 3px solid #e5e5e5; height:auto; overflow: auto; padding: 20px;" class="form-group">
       
@@ -319,7 +320,7 @@ Tags: Volunteers
     url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -327,7 +328,11 @@ Tags: Volunteers
       /* Alerts the results */
       posting.done(function( data ) {
         if(data["code"]==0){
-  
+      							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">success</div>');
+
+							}).delay(3000).slideUp('fast');
+							
           }
           else{
             //  myFunction();

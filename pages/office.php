@@ -1,6 +1,5 @@
-</html>
-<!DOCTYPE html>
-<html lang="en">
+<?php
+?>
 
 <head>
 
@@ -331,7 +330,7 @@ $(document).ready(function(){
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -340,8 +339,8 @@ $(document).ready(function(){
       /* Alerts the results */
  
       posting.done(function( data ) {
-  
         if(data["code"]==0){
+            
                 				$('#errorDiv').slideDown('fast', function(){
 								$('#errorDiv').html('<div class="alert alert-info">success</div>');
 
@@ -369,7 +368,6 @@ $(document).ready(function(){
 
 </body>
 
-</html>
 <?php
       include './footer.php';
       ?>

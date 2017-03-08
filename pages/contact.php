@@ -156,9 +156,7 @@ if(empty($ID)){
                                     </ul>
 
                         </li>
-<!--                          <li>
-                            <a href="#"><i class="fa fa-user-plus fa-fw"></i>Role</a>
-                           </li>-->
+
                         <li>
                             <a href="membershipinfo.php"><i class="fa fa-info-circle fa-fw"></i>Membership Information</a>
                         </li>
@@ -180,7 +178,7 @@ if(empty($ID)){
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <!--<h1 class="page-header">Forms</h1>-->
+                    
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -188,16 +186,14 @@ if(empty($ID)){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default" style="margin-top:5px">
-                        <!--<div class="panel-heading">
-                           <h1 class="page">Membership Information<h1>
-                        </div>-->
+                  
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-8">
                                     <form id="contactForm" class="form-vertical" role="form" action="ajaxAPI.php" name="valid" method="post" > 
-      
+      <div id="errorDiv"></div>
             <input type="hidden" value="contact" id="contactus" name="contactus">
-                <div id="errorDiv"></div>
+                
             
                  <div class="form-group" style="margin-top:5px;">
                   <label>Name</label>
@@ -207,15 +203,12 @@ if(empty($ID)){
                    <!-- </div>-->
                     <div class="form-group" style="margin-top:5px;">
                   <label>Email Id</label>
-                  <!--  <div style="margin-bottom: 25px" class="input-group">-->
-   <!--                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+
                          <input type="text" class="form-control" id="inputEmail"   name="mail" placeholder="Username or Email" required>                                      
                     </div>
                      <div class="form-group" style="margin-top:5px;">
                            <label>Subject</label>
-                               <!-- <div style="margin-bottom: 25px" class="input-group">-->
-<!--                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
--->                         <input type="text" class="form-control" id="Subject"   name="subject" placeholder="Subject" required>                                     
+                            <input type="text" class="form-control" id="Subject"   name="subject" placeholder="Subject" required>                                     
                     </div>  
                      <div class="form-group" style="margin-top:5px;">
                     <label>Select Category</label>
@@ -229,20 +222,10 @@ if(empty($ID)){
                      </div>
                       <div class="form-group" style="margin-top:5px;">
                            <label>Message</label>
-                   <!-- <div style="margin-bottom: 25px" class="input-group">-->
-<!--                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
--->                       <textarea name="messages" class="form-control" id="Message" placeholder="Message" rows="auto" cols="auto" required>
+                          <textarea name="messages" class="form-control" id="Message" placeholder="Message" rows="auto" cols="auto" required>
                        </textarea>
                     </div>
-                    <!--<div class="input-group">
-                       
-                    <br>
-                    <div style="margin-top:10px" class="form-group">
-                        <div class="col-sm-12 controls">
-                            <a id="btn-login" type="submit"  class="btn btn-success">Submit</a>
-                            <a id="btn-login"  href="index.html" class="btn btn-success">Cancel</a>
 
-                        </div>-->
                         <div>
                             <div style="margin-top:20px" class="input-group">
                                <button type="submit" value="submit" id="loginsubmit"style="margin-right:10px;" class="btn btn-success" onclick="return vallidateFun(form);">Submit </button>
@@ -284,7 +267,8 @@ if(empty($ID)){
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var send = $.post( url, formdata);
-     
+     $("body").scrollTop(0);
+     alert('fail');
    //alert(url+formdata);
          // url = "test.php";
 
@@ -295,18 +279,10 @@ if(empty($ID)){
 
       send.done(function( data ) {
         if(data["code"]==0){
-        $("#contactForm")[0].reset();
-        $("#snackbarid").snackbar("show");
-       //  $("#errorDiv").modal("show");
-    
-        // window.location = "contact.php";
-        // console.log( $( this ).text() );
+            alert('success');
+    							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">Successfully Sent</div>');
 
-     		$('#errorDiv').slideDown('fast', function(){
-								$('#errorDiv').html('<div class="alert alert-info">success</div>');
-								$("#contactForm").trigger('reset');
-								$('input[type=text],input[type=email],input[type=password]').prop('disabled', false);
-								$('#loginsubmit').html('&nbsp;Submit').prop('disabled', false);
 							}).delay(3000).slideUp('fast');
 							
 							
@@ -324,29 +300,10 @@ if(empty($ID)){
 							}).delay(3000).slideUp('fast');
 							
 									   
-				
- 
-  /*   var options =  {
-    content: "Some text", // text of the snackbar
-    style: "toast", // add a custom class to your snackbar
-    timeout: 1000 // time in milliseconds after the snackbar autohides, 0 is disabled
-       }*/
-
-      // $.snackbar(options);
-             // alert(data["desc"]);
           }
       });
 
-        // alert($form.attr( 'action' ));
-        // $.ajax({
-        //     type: "POST",
-        //     url: $form.attr( 'action' ),
-        //     data: { name: $('#name').val(), name2: $('#name2').val() },
-        //     dataType: "json",
-        //     success: function(data, textStatus) {
-        //         alert(data);
-        //     }
-        // });
+
 
     });
 </script>

@@ -182,7 +182,8 @@ if(empty($ID)){
 <label><input type="checkbox" name="checkbox" value="check" id="agree" />
  I have read and agree to the Terms and Conditions and Privacy Policy</label>-->
 
-    <form id="form4" runat="server" action="ajaxAPI.php">
+    <form id="form4" runat="server" action="ajaxAPI.php" method="post">
+        <div id="errorDiv"></div>
     <div class="form-inline">   
 
       <b><li>  Partners</li></b>
@@ -320,7 +321,7 @@ registration formalities, please contact <b>director_partner@schoolsforindia.org
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -330,7 +331,9 @@ registration formalities, please contact <b>director_partner@schoolsforindia.org
       posting.done(function( data ) {
   //        alert('fail');
         if(data["code"]==0){
-            alert('sucess');
+                				$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">success</div>');
+                                 }).delay(3000).slideUp('fast');
 
           }
           else{

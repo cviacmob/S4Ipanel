@@ -199,6 +199,7 @@ $(document).ready(function(){
 
 
     <form role="form" action="ajaxAPI.php" id="memberForm" method="POST">
+        <div id="errorDiv"></div>
                                         <input type="hidden" id="member" name="member" value="Member"/>
                                            <div class="form-group">
                                                  <?php
@@ -292,7 +293,7 @@ $(document).ready(function(){
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
@@ -305,13 +306,10 @@ $(document).ready(function(){
         if(data["code"]==0){
             alert('sucess');
              var delay = $(this).attr('data-delay');
-                    if (delay != undefined) {
-                        delay = parseInt(delay);
-                        clearTimeout(timeOut);
-                        timeOut = window.setTimeout(function () {
-                            alert.slideUp();
-                        }, delay);
-                    }
+                        							$('#errorDiv').slideDown('fast', function(){
+								$('#errorDiv').html('<div class="alert alert-info">success</div>');
+
+							}).delay(3000).slideUp('fast');
 
           }
           else{

@@ -23,10 +23,12 @@ function office()
 if($exe==true){
 $result['code']=0;
 $result['desc']="success";
+echo json_encode($result);
 }
 else{
 $result['code']=1004;
 $result['desc']="failed";
+echo json_encode($result);
 }
     $db = null;
 }

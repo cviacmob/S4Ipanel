@@ -223,8 +223,7 @@ if($_SERVER['REQUEST_METHOD']=='GET')
                                 <div class="col-lg-8">
                                     <form data-toggle="validator" id="myForm" name="myForm" action="ajaxAPI.php" role="form" method="post">
                          <div id="errorDiv"></div>
-                <div id="myDiv">
-                    </div>
+    
 
                                          <div class="form-group">
                                              <input type="hidden" id="basic" name="basic" value="basicinfo"/>
@@ -323,7 +322,7 @@ if($_SERVER['REQUEST_METHOD']=='GET')
          url = $form.attr( 'action' );
     var formdata=$form.serializeArray();
     var posting = $.post( url, formdata);
-    
+    $("body").scrollTop(0);
          // url = "test.php";
 
       /* Send the data using post with element id name and name2*/
